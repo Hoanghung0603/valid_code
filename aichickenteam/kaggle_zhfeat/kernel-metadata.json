@@ -1,0 +1,1 @@
+{"id": "kakaoffical/r2ai-zhfeat", "title": "r2ai-zhfeat", "code_file": "zhfeat.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-zhdocs"], "competition_sources": [], "kernel_sources": ["kakaoffical/r2ai-ce2"]}

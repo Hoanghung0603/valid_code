@@ -1,0 +1,2 @@
+{"id": "kakaoffical/r2ai-gnft-a", "title": "r2ai-gnft-a", "code_file": "gn_ft.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-gnft-data", "kakaoffical/r2ai-greennode-model"], "competition_sources": [], "kernel_sources": []}

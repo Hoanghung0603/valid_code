@@ -1,0 +1,2 @@
+{"id": "kakaoffical/r2ai-newdocs-feat", "title": "r2ai-newdocs-feat", "code_file": "newdocs.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-newdocs", "kakaoffical/r2ai-greennode-model"], "competition_sources": [], "kernel_sources": ["kakaoffical/r2ai-savemodels", "kakaoffical/r2ai-ce2"]}

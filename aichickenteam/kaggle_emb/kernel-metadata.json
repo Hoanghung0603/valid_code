@@ -1,0 +1,13 @@
+{
+  "id": "kakaoffical/r2ai-eval-embed",
+  "title": "r2ai-eval-embed",
+  "code_file": "eval_embed.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["kakaoffical/r2ai-eval-pairs"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

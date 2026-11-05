@@ -1,0 +1,17 @@
+.venv/
+data/
+indexes/
+submissions/
+logs/
+.r2ai_cred
+test_login*.py
+__pycache__/
+*.pyc
+*.zip
+*.tgz
+/test_*.py
+/test.html
+/*.cfg.json
+.venv_setup.log
+.venv/colab/vi_remaining*.csv
+release/

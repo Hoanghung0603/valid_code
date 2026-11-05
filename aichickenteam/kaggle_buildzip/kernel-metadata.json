@@ -1,0 +1,1 @@
+{"id": "kakaoffical/r2ai-buildzip", "title": "r2ai-buildzip", "code_file": "buildzip.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": false, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-buildin", "kakaoffical/r2ai-vidocs-all"], "competition_sources": [], "kernel_sources": []}

@@ -1,0 +1,92 @@
+date,file,config,score_doc_p,score_doc_r,score_chunk_p,score_chunk_r,f2_macro
+2026-10-03 11:45,baseline_v0.zip (4186),BM25 VI 205k docs top3 doc_id=str,0,0,0,0,0.0000
+2026-10-03 12:17,baseline_v0_int.zip (4191),same doc_id=int,0.2263,0.0126,0.0041,0.0001,0.0077
+2026-10-03 12:52,v1_k40.zip (4195),BM25 VI 625k top40 chunk800,0.1639,0.1330,0.0315,0.0287,0.0728
+2026-10-03 17:36,v2_vi40_c1600x2.zip (4208),pipeline_v2 VI top40 + chunk_v2 ~1700 chars 1/doc,0.1778,0.1411,0.0924,0.0749,0.0988
+2026-10-04 13:25,v3_vi20_zh60.zip (4281),VI20 + ZH60 (BM25 jieba 780k ZH docs),0.0568,0.0995,0.0300,0.0530,0.0553
+2026-10-04 13:32,v3_vi30_zh40.zip (4283),VI30 + ZH40,,,,,0.0739
+2026-10-04 13:55,v4_vi100_c60.zip (4286),VI only top100 docs + chunk_v2 for top60,0.1218,0.2179,0.0809,0.0939,0.1193
+2026-10-04 19:00,v5_gn_a85_d120_c60.zip (4324),BM25 top200 VI -> GreenNode-VN embedding rerank (alpha .85 rank fusion) top120 docs + 60 chunks,0.1337,0.2716,0.1187,0.1270,0.1507
+2026-10-04 19:20,v6_gn_d150_c80.zip (4326),same as v5 but 150 docs + 80 chunks,0.1114,0.2793,0.1005,0.1392,0.1473
+2026-10-04 19:45,v7_uni_bm25_d100_c60.zip (4335),plain BM25 (syllables no bigram, raw query, full text) top100 no rerank,0.1020,0.1888,0.0658,0.0808,0.1009
+2026-10-04 20:05,v8_gn_d120_c80.zip (4339),v5 pipeline with 120 docs + 80 chunks,0.1337,0.2716,0.1005,0.1392,0.1520
+2026-10-04 23:00,v9_dense_w1.zip (4360),RRF( BM25top200->GreenNode chunk rerank , GreenNode dense top300 over full 625k VI corpus w=1.0 ) 120 docs + 80 chunks,0.1832,0.3542,0.1371,0.1820,0.2022
+2026-10-04 23:10,v10_dense_w2.zip (4362),same as v9 with w_dense=2.0,0.1914,0.3597,0.1477,0.1883,0.2097
+2026-10-04 23:15,v11_dense_w4.zip (4363),same as v9 with w_dense=4.0,0.1897,0.3511,0.1483,0.1830,0.2068
+2026-10-05 18:12,v12_gn2_bgem3_1.zip (4469),v10 + bge-m3 dense as 3rd RRF source (w=1),0.1906,0.3576,0.1487,0.1869,0.2088
+2026-10-05 18:25,v14_w2_d100_c80.zip (4470),v10 config with 100 docs (instead of 120),0.2110,0.3374,0.1477,0.1883,0.2081
+2026-10-05 19:05,v13_v10_chunkrr.zip (4474),v10 + GreenNode re-selection of chunks for dense-only docs (15482 changed),0.1914,0.3597,0.1469,0.1885,0.2096
+2026-10-05 21:45,v15_adaptive17.zip (4481),v10 fusion + adaptive per-query n_docs = 1.7 x predicted gold (from dense score@50 quantile map) [40..200]; n_chunks=0.67 n_docs,0.2050,0.3465,0.1565,0.1772,0.2183
+2026-10-05 22:05,v16_adaptive20.zip (4483),same as v15 with adaptive factor 2.0,0.1952,0.3581,0.1513,0.1850,0.2211
+2026-10-05 22:20,v17_adaptive24.zip (4484),adaptive 2.4 + chunk ratio 0.55 (docs F2 flat vs 2.0; fewer chunks hurt chunk F2),0.1858,0.3684,0.1561,0.1783,0.2195
+2026-10-05 22:45,v18_a22_cr75.zip (4487),adaptive 2.2 + chunk ratio 0.75 (~93 chunks/q),0.1901,0.3637,0.1445,0.1919,0.2224
+2026-10-05 23:00,v19_a22_cr90.zip (4488),adaptive 2.2 + chunk ratio 0.9 (~108 chunks/q; 70MB zip),0.1901,0.3637,0.1375,0.1978,0.2228
+2026-10-06 03:50,v20_dchunk_w1.zip (4503),v18 config + chunk-level GreenNode dense (Kaggle; <=6 windows/doc) as 3rd RRF source w=1; its windows used as chunks for non-BM25 docs,0.1987,0.3827,0.1474,0.1971,0.2310
+2026-10-06 03:58,v21_dchunk_w2.zip (4504),v20 with chunk-level dense weight 2.0,0.1997,0.3848,0.1461,0.1981,0.2315
+2026-10-06 07:55,v22_d3w3.zip (4507),v21 with chunk-level dense weight 3.0,0.1976,0.3825,0.1440,0.1957,0.2293
+2026-10-06 08:03,v23_d3w2_cr90.zip (4509),v21 with chunk ratio 0.9,0.1997,0.3848,0.1394,0.2056,0.2324
+2026-10-06 08:20,v24_mq.zip (4515),v23 + multi-query GreenNode dense (max over query+3 plan variants) as extra RRF source w=1,0.1998,0.3824,0.1410,0.2047,0.2326
+2026-10-06 20:10,v26_newdocs.zip (4615),v23 + bge-m3 chunk dense as dense2 w=1 + doc/chunk dense indices incl. 23k new crawled docs (dense_gn_top300_v2 / dense_chunks_top_v2),0.2006,0.3922,0.1396,0.2077,0.2355
+2026-10-06 23:10,v27_ltr_oof_lzma.zip (4621),v26 + LightGBM LTR order (OOF for public queries; label=chunk hit) for docs+chunks; LZMA zip via Kaggle relay,0.1973,0.3825,0.1475,0.2150,0.2362
+2026-10-06 23:20,v28_ltr2_c2400_lzma.zip (4622 nộp bởi người dùng qua trình duyệt),v27 + LTR2 (title/len features) + chunk expanded to 2400 chars,0.1973,0.3829,0.1929,0.2802,0.2642
+2026-10-06 23:40,v28_rrfdocs_ltr2chunks_c2400.zip (4624),docs=RRF (v26) + chunks from LTR2 order expanded to 2400 chars; LZMA via relay,0.2006,0.3922,0.1929,0.2802,0.2671
+2026-10-06 23:55,v29_c3600.zip (4625),v28 with chunk 3600 chars,0.2006,0.3922,0.2085,0.3111,0.2791
+2026-10-07 00:10,v30_c5000.zip (4628),v28 with chunk 5000 chars (86.5MB lzma),0.2006,0.3922,0.2200,0.3380,0.2892
+2026-10-07 00:45,v31_c8000_cr12.zip (4633),v30 with chunk 8000 chars + chunk-ratio 1.2 + chunk-max 200 (146 chunks/q); LZMA preset9e dict512MB (74.6MB),0.2006,0.3922,0.1849,0.4005,0.2980
+2026-10-07 07:10,v32_ltr3_all.zip (4647),v31 config but docs+chunks ordered by LTR3 (retrained incl. v31 labels; OOF public),0.2068,0.4007,0.1934,0.4181,0.3086
+2026-10-07 19:30,v33_cr15 (4748),FAILED: relay kernel used stale dataset version (old url) -> nothing uploaded to new key,,,,,
+2026-10-07 20:10,v33_cr15 (4750),v32 + chunk-ratio 1.5 chunk-max 260 (LTR4; relay recompress 1GB dict -> 89MB): more chunks hurt precision,0.2069,0.4022,0.1651,0.4484,0.3061
+2026-10-07 20:40,v34_a26.zip (4753),LTR4 docs+chunks; adaptive 2.6; chunk-ratio 1.015 max 200 (same chunk count as v32),0.1984,0.4116,0.1963,0.4177,0.3093
+2026-10-07 21:20,v35_ltr6_prf.zip (4758),v34 config with LTR6 (PRF centroid features + 2-stage PRF on OOF LTR),0.2016,0.4187,0.1991,0.4241,0.3142
+2026-10-07 22:00,v36_ef2.zip (4759),LTR7 order + expected-F2 per-query cutoff (G=1.7*sum p; n in [30;250]); chunks=docs count,0.2264,0.4098,0.2291,0.4109,0.3248
+2026-10-07 22:30,v37_ef2c22.zip (4761),v36 with EF2 c=2.2 range [30;300] chunk-max 250 (flat vs c=1.7),0.2109,0.4249,0.2116,0.4278,0.3248
+2026-10-07 22:40,v38_ltr8_ef19.zip (4762),LTR8 (2-stage PRF; labels incl. v36/v37) + EF2 c=1.9 range [30;280] chunk-max 230,0.2200,0.4180,0.2211,0.4205,0.3256
+2026-10-08 02:20,v39_e5.zip (4775),v38 config + LTR9 with multilingual-e5-large-instruct features (e5_s/rank/gap + e5 PRF; Colab-encoded 222k candidates),0.2205,0.4265,0.2220,0.4274,0.3307
+2026-10-08 19:10,v40_ce (4883),v39 + LTR10 with bge-reranker-v2-m3 cross-encoder features (top-120/q; Colab),0.2254,0.4275,0.2272,0.4284,0.3347
+2026-10-08 20:30,v41_ce200 (ID see logs),v40 + cross-encoder extended to ranks 121-200 (LTR11): no gain,0.2236,0.4280,0.2251,0.4292,0.3345
+2026-10-08 22:30,v42_cewin (4889),v40 + window cross-encoder (CE on best dense window; ce2/ce_max) LTR12,0.2239,0.4276,0.2253,0.4291,0.3352
+2026-10-09 22:45,v43h_hyde,v42 + HyDE (Qwen3-4B-Instruct-2507 pseudo-docs; GreenNode search hyde+mix as LTR sources d4/d5),0.2234,0.4286,0.2247,0.4298,0.3356
+2026-10-09 23:10,v43_ceft (4977),v42 + fold-wise fine-tuned bge-reranker-v2-m3 (OOF public; all-data model for private) as LTR feature (LTR13),0.2269,0.4283,0.2286,0.4299,0.3370
+2026-10-09 23:50,v44_ceft_hyde (4980),v43 + HyDE sources (LTR14): HyDE no gain on top of CE-ft,0.2266,0.4263,0.2283,0.4283,0.3366
+2026-10-10 09:00,v45s_bag5,v43 + LTR 5-seed bagging (--seeds 5),0.2269,0.4285,0.2284,0.4298,0.3374
+2026-10-10 11:40,v46_ceftwin (5045),v45s + fold-wise fine-tuned CE on best dense window (--rr4; Colab folds 0-1 + Kaggle folds 2-4 & all-data),0.2275,0.4300,0.2289,0.4312,0.3386
+2026-10-10 15:20,v47 (5074),FAILED: relay kernel push blocked by 5 CPU sessions (crawl) -> stale relay output; fixed submit_api checks,,,,,
+2026-10-11 02:00,v47_gnft (5096),v46 + fold-wise fine-tuned GreenNode feature (--gnft; Kaggle gnft_a/b) -> ltr_order_oof16; LZMA dict384 HC4,0.2307,0.4354,0.2317,0.4372,0.3408
+2026-10-11 20:00,v48_hp (5214),v47 + LTR params lr0.03 l2=10 700 rounds (oof18),0.2335,0.4325,0.2345,0.4348,0.3411
+2026-10-12 00:00,v49_newdocs (5233),v48 + 15k new crawled VI docs (newdocs kernel feats; v3 caches; oof17),0.2329,0.4439,0.2341,0.4460,0.3475
+2026-10-12 05:00,v50_newdocs2 (5249),v49 + 18k more crawled VI docs (crawl3 s0-s3; v4 caches; oof19),0.2328,0.4673,0.2340,0.4682,0.3587
+2026-10-12 15:00,v51_newdocs3 (5326),v50 + 19k crawled VI docs (crawl3 s4-s7 + local8 part; v5 caches; oof20); R2AI_REORDER LZMA 93.2MB,0.2350,0.4945,0.2368,0.4946,0.3730
+2026-10-13 02:40,v52_newdocs4 (5411),v51 + 16k crawled VI docs (crawl4 s0-s3 + shard8 rest; v6 caches; oof21); REORDER LZMA 97.4MB,0.2352,0.5122,0.2374,0.5116,0.3817
+2026-10-13 05:35,v53_newdocs5 (5417),v52 + 12.6k crawled VI docs (crawl4 s4-s7; v7 caches; oof22); chunk-max 220; REORDER LZMA 98.8MB,0.2376,0.5314,0.2415,0.5289,0.3915
+2026-10-13 17:15,v54_cm260_dict1g (5495),v53 with chunk-max 260 (was 220); LZMA dict 1GB HC4 (v53 json 98.8->94.9MB; ~9GB RAM 3h) -> 97.8MB accepted,0.2376,0.5314,0.2367,0.5353,0.3920
+2026-10-13 18:50,probe_pubmed_top100 (5506),PROBE: only top-100 PubMed docs/query (bge-m3 local on 240k new EN links from BTC 12/10 update); no chunks,0,0,0,0,0.0
+2026-10-14 01:30,v55_oof23 (5531),v54 + LTR retrained with v53/v54 labels (min_data_in_leaf 50; HP sweep of 5 configs all within 0.001 AUC); flat,0.2373,0.5315,0.2364,0.5354,0.3920
+2026-10-14 10:30,v56_knn (5557),"kNN candidate expansion: GN doc-doc neighbours of top-40 OOF docs (sim>=0.80) -> +48 out-of-pool docs/q scored on Kaggle (kaggle_knnpairs) + d4 knn feature; cache v8; oof24 AUC .8414 (flat); chunk-max 240 (260 = 99.76MB)",0.2334,0.5388,0.2350,0.5388,0.3926
+2026-10-14 14:40,v57_ce2 (5601),"v56 + CE (bge-reranker-v2-m3) fine-tuned again on ALL labels (242k pairs/24k pos -> 68k train; scripts/ce2_prep.py, kaggle_ce2 T4x2 5.6h; folds = LTR folds) as ltr --rr5; oof25 AUC .8414->.8558; chunk-max 240, 96.3MB",0.2408,0.5529,0.2419,0.5524,0.4057
+2026-10-15 07:45,v58_ce2win (not submitted),"v57 + window CE on all labels (kaggle_ce2win; per-q AUC .710 vs old .666) as --rr6; oof26 AUC .8561 (v57 .8558) -> below gate .8568, not submitted; gnft2 (GN bi-encoder all labels) .739 < old .759, unused",,,,,
+2026-10-15 16:24,v59_ce3 (not submitted),"v57 + CE init AITeamVN/Vietnamese_Reranker max_len 512 all labels (kaggle_ce3; per-q AUC .708 < ce2 .723) as --rr6; oof27 stage1 AUC .8558 (v57 stage1 .8557) -> not submitted",,,,,
+2026-10-15 18:16,ltr_xq (not submitted),"v57 stage1 + ltr --xq cross-query gold features (doc gold for similar other query; fold-safe) on Kaggle CPU kaggle_ltrx (15 min): oof28 .8564; + embedding label propagation xq_dmax/xq_d5: oof29 .8563 -> flat",,,,,
+2026-10-15 21:40,v60_harvest (5747),"LABEL HARVEST probe: docs top-450; public chunks = 100 highest-ranked UNSEEN docs/q (60k new pair labels +1224 pos; unseen pos rate ~2-3% at ranks ~165-450); docs R .553->.647 => ~5-6 unseen gold/q in tail",0.0984,0.6474,0.0206,0.0257,0.1469
+2026-10-16 10:20,v62 (5792),"v57 + harvested labels (v60) + ce2 retrained on them (ce2b, per-q AUC .7548 vs .7544) + ltr --xq; LTR on Kaggle CPU oof31 (f2sim .3995 vs v57 .3968); chunk-max 240, 94.4MB; relay failed (Kaggle dataset version error) -> direct curl upload OK 350s",0.2443,0.5522,0.2454,0.5505,0.4083
+2026-10-16 14:00,v63_harvest (5820),"LABEL HARVEST round 2 on oof31 order: +57.5k pairs but only +667 pos (round 1: +1224); LTR oof32 on new labels f2sim .39944 < oof31 .39972 -> no gain, harvest loop stopped",0.0987,0.6486,0.0112,0.0127,0.1419
+2026-10-19 19:31,v64_ce2avg (not submitted),"ce2 3-seed avg (ce2b/c/d; per-q AUC .7671/.7705/.7687 -> avg .7728, corr .94) as --rr5; LTR oof33 f2sim .39923 < oof31 .39972 -> no gain",,,,,
+2026-10-19 21:00,bm25 probe (Kaggle CPU),"pooling hypothesis test: 12 BM25 configs on full VI corpus (syllable/pyvi, title+text/text/2000/3000 chars, lucene/robertson, k1/b): top-42 only 13-14% known-pos vs 57-70% known-neg (LTR v62: 37% pos) -> BTC baseline (doc P .88) is NOT a plain BM25 over the public corpus; likely BM25 over judged/gold pool -> not replicable",,,,,
+2026-10-20 15:03,v65 (6294),"v62 + 5,324 Pharmacity pages re-crawled via www.pharmacity.vn (BTC 19/10; pharmacity_fetch.py) -> newdocs kernel (+ce2_all rr5) -> v9 caches -> LTR oof34 (offline .39766 because new docs unlabeled; without them .39923) -> forced submit; pharmacity chunks 161/696 relevant (23%, LTR p .24 calibrated); chunk-max 240 96.1MB; on_leaderboard False",0.2429,0.5568,0.2444,0.5550,0.4095
+2026-10-20 15:40,v66_probe_pharmacity (6305),"LABEL HARVEST of re-crawled Pharmacity: top-40 UNSEEN pharmacity docs/public q by GN d1 (19,906 chunks): only 82 relevant (0.4%; rank1-5 1.7%, 6-10 0.7%, >10 ~0.1%) -> LTR already captured almost all pharmacity gold (23% precision in v65)",0.005,0.0013,0.0049,0.0013,0.0015
+2026-10-20 16:21,v67 (not submitted),"v65 + LTR on labels incl. pharmacity probe: oof35 f2sim .40106 vs oof34 .40089 (+.0002 < gate .0005) -> not submitted",,,,,
+2026-10-20 16:50,v68_probe_pubmed_pmid (6311),"PubMed probe redo with PMIDs (rules: EN doc_id = PMID) + 30 abstract chunks/public q: 0 relevant, all unknown_doc -> PubMed not in public gold (both id formats)",0,0,0,0,0.0
+2026-10-20 23:00,v69_probe_zh (6339),"ZH probe: crawled 153.9k/235.5k of BTC ZH subset on Kaggle (8 kernels; 120ask only 37%), kaggle_zhfeat bge-m3 dense top-300 + bge-reranker + ce2_all top-100; top-50/public q by ce0: doc P .094 R .076 (ZH alone = 7.6% of gold); precision rank1-5 12.7% -> 31-50 7.2%; hits by host 120ask 1202, cnkang 603, ask.39 398; dense AUC .717 > ce2 .629 > ce0 .605; zh_ltr OOF AUC .735, P@5 .20",0.0938,0.0763,0.0918,0.0714,0.0662
+2026-10-21 22:40,v70_zh (6445),"v65 + ZH docs merged by probability: BTC ZH subset 235k (crawled 153.9k on Kaggle), kaggle_zhfeat bge-m3 dense+bge-reranker+ce2_all, zh_ltr OOF AUC .735 (labels from ZH probe v69), merge_zh scale .9, ~22 ZH docs/q, zh-chars 1800, chunk-max 200; LZMA on Kaggle (zipjob, 98.3MB); submitted via Kaggle relay (direct upload ~7KB/s)",0.2417,0.6187,0.2563,0.5904,0.4348
+2026-10-22 09:20,v71_zh (6484),"v65 + ZH from 199.6k crawled docs (120ask recrawl +45k), zh_probs2 (zh_ltr retrained), merge scale .9 zh-chars 1800 chunk-max 200; Kaggle LZMA 98.2MB; relay submit after freeing BTC storage quota",0.2436,0.6370,0.2588,0.6063,0.4434
+2026-10-22 09:25,v72_probe_zh2 (6485),"ZH probe 2: top-60 UNSEEN ZH/public q by zh_probs3: P .067, R .054 (5.4% of all gold still in unseen ZH)",0.0673,0.0538,0.0669,0.0518,0.05
+2026-10-22 16:14,v72_zh (6533),"v65 + ZH zh_probs4 (zh_ltr3 on 5.7k ZH pos, AUC .748; 199.6k ZH docs), merge scale .9 zh-chars 1800 cm200; Kaggle LZMA + relay",0.2448,0.6377,0.2598,0.6072,0.4447
+2026-10-22 23:55,v74_zh (6575),"v65 + ZH 222.3k docs (120ask r4 + 39.net mobile) + ZH CE (kaggle_cezh) feature in zh_ltr3 (AUC .767), merge scale .9 cm200; Kaggle LZMA 99.0MB; relay PUT ok but registration dropped -> finished via API (finish key)",0.2457,0.6481,0.2609,0.6164,0.4486
+2026-10-23 10:00,v75_zh (6634),"v74 + query translation VI->ZH (Qwen2.5-7B): BM25 jieba + dense ZH-ZH features/candidates in zh_ltr3 (AUC .784); LOCAL LZMA dict768 cm180 94.9MB (MemoryMax 9G) -> docs F2 .4545 (+.0022 vs v74) but chunks .4430 (cm180 < cm200); NOTE: BTC stopped returning details (scoring_result None) from 22/10",0.2469,0.6478,0.2680,0.6031,0.4488
+2026-10-23 17:40,v75b (6698),"= v75 with cm200 (Kaggle LZMA 98.8MB) – FIRST under NEW chunk metric (LCS >= 40% of BOTH gold and predicted chunk, BTC 23/10): chunks F2 .3602 (old metric ~.445) -> long VI chunks (<=8000 chars) and ZH 1800 chars now fail; gold VI chunk ~800 tokens (~2.8k chars)",0.2469,0.6478,0.2196,0.4847,0.4074
+2026-10-23 17:43,v76a (6699),"NEW chunk metric: vi-chars 6000 (trunc from dense window) zh 1800 cm215",0.2469,0.6478,0.2157,0.4879,0.4073
+2026-10-23 17:55,v76b (6703),"NEW chunk metric: vi-chars 5000 zh 1800 cm250 (best under new metric so far)",0.2469,0.6478,0.2094,0.4953,0.4077
+2026-10-23 23:00,v77a,"NEW chunk metric: vi-chars 4000 zh 900 cm260",0.2469,0.6478,0.2071,0.4926,0.4064
+2026-10-24 11:10,v77b (6800),"NEW chunk metric: vi-chars 3000 zh 900 cm280 -> chunk length barely matters (chunks F2 .354-.361): placement of chunk vs gold is the issue",0.2469,0.6478,0.2034,0.4881,0.4043
+2026-10-24 15:30,v78a/v78b,"NEW metric: VI chunk ~3000 chars centered on dense window (v78a) / doc start (v78b): 0.4044/0.4044 = same as trunc (v77b .4043) -> placement irrelevant (median VI doc ~2.3k chars); lost hits likely SHORT gold chunks (<~340 tokens) failing LCS/pred>=.4",0.2469,0.6478,0.2035,0.4885,0.4044
+2026-10-25 01:10,v79a,"NEW metric: dual chunks (VI 4000 + 800-char centered short chunk for top-80 docs): chunks P .1706 R .4972 F2 .3332 -> worse",0.2469,0.6478,0.1706,0.4972,0.394
+2026-10-25 02:10,v79b,"NEW metric: short-only VI 1200 centered + ZH 500: chunks F2 .1534 -> short chunks fail LCS/gold>=.4; best chunk config stays v76b (VI<=5000, ZH 1800, cm250)",0.2469,0.6478,0.0897,0.2125,0.304

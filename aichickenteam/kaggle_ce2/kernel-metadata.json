@@ -1,0 +1,2 @@
+{"id": "kakaoffical/r2ai-ce2", "title": "r2ai-ce2", "code_file": "ce2.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-ce2data"], "competition_sources": [], "kernel_sources": []}

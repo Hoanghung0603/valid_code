@@ -1,0 +1,2 @@
+{"id": "kakaoffical/r2ai-net-test", "title": "r2ai-net-test", "code_file": "net_test.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": false, "enable_internet": true, "dataset_sources": [], "competition_sources": [], "kernel_sources": []}

@@ -1,0 +1,1 @@
+{"id": "kakaoffical/r2ai-zipjob-run", "title": "r2ai-zipjob-run", "code_file": "zipjob.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": false, "enable_internet": false, "dataset_sources": ["kakaoffical/r2ai-zipjob"], "competition_sources": [], "kernel_sources": []}

@@ -1,0 +1,2 @@
+{"id": "kakaoffical/r2ai-crawl2-s7", "title": "r2ai-crawl2-s7", "code_file": "crawl_vi.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": false, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-crawler2"], "competition_sources": [], "kernel_sources": []}

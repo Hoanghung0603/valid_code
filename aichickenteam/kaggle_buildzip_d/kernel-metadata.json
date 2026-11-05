@@ -1,0 +1,1 @@
+{"id": "daophong123/r2ai-buildzip", "title": "r2ai-buildzip", "code_file": "buildzip.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": false, "enable_internet": true, "dataset_sources": ["daophong123/r2ai-buildin"], "competition_sources": [], "kernel_sources": []}

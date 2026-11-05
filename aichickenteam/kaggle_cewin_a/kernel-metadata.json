@@ -1,0 +1,2 @@
+{"id": "kakaoffical/r2ai-cewin-a", "title": "r2ai-cewin-a", "code_file": "ft_ce_win.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-ce-win"], "competition_sources": [], "kernel_sources": []}

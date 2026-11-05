@@ -1,0 +1,13 @@
+{
+  "id": "kakaoffical/r2ai-dense-chunks-bgem3",
+  "title": "r2ai-dense-chunks-bgem3",
+  "code_file": "dense_chunks.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["kakaoffical/r2ai-vi-docs"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

@@ -1,0 +1,2 @@
+{"id": "daophong123/r2ai-ce2b", "title": "r2ai-ce2b", "code_file": "ce2b.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["daophong123/r2ai-ce2bdata"], "competition_sources": [], "kernel_sources": []}

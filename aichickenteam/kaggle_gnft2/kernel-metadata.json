@@ -1,0 +1,2 @@
+{"id": "daophong123/r2ai-gnft2", "title": "r2ai-gnft2", "code_file": "gnft2.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["daophong123/r2ai-ce2data", "daophong123/r2ai-greennode-model"], "competition_sources": [], "kernel_sources": []}

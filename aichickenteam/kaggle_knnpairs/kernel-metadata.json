@@ -1,0 +1,2 @@
+{"id": "kakaoffical/r2ai-knnpairs", "title": "r2ai-knnpairs", "code_file": "knnpairs.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": true, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-knn", "kakaoffical/r2ai-greennode-model"], "competition_sources": [], "kernel_sources": ["kakaoffical/r2ai-savemodels"]}

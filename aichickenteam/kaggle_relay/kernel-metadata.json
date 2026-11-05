@@ -1,0 +1,2 @@
+{"id": "kakaoffical/r2ai-relay-put", "title": "r2ai-relay-put", "code_file": "relay.py", "language": "python", "kernel_type": "script",
+ "is_private": true, "enable_gpu": false, "enable_internet": true, "dataset_sources": ["kakaoffical/r2ai-submit-relay"], "competition_sources": [], "kernel_sources": []}

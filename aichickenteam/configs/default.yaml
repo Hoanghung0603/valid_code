@@ -1,0 +1,180 @@
+# Cấu hình mặc định. Mỗi module thêm khối của mình.
+paths:
+  queries: data/ViBioMIR/query.parquet
+  corpus: data/ViBioMIR/links_corpus.parquet
+  docs: data/docs
+  chunks: data/chunks
+  indexes: indexes
+  cache: data/cache
+
+# --- src/select.py: dynamic per-query cutoff (tune with `python -m src.select tune`)
+select:
+  score_norm: none        # none | sigmoid | minmax (applied before thresholds)
+  tau_abs: null           # absolute chunk-score threshold (null = off)
+  alpha: 0.8              # keep s >= top1 - (1-alpha)*|top1|
+  min_k: 1
+  max_k: 10
+  max_chunks_per_doc: null
+  dedupe: true            # drop overlapping chunks of the same doc (keep best)
+  dedupe_min_overlap: 0.0
+  doc_agg: max            # max | max_bonus | sum_top2
+  doc_bonus: 0.0
+  doc_bonus_cap: null
+  doc_tau_abs: inherit    # doc_* = inherit -> same as chunk value
+  doc_alpha: inherit
+  doc_min_k: inherit
+  doc_max_k: inherit
+  lang_bias: {}           # e.g. {en: 0.0, vi: 0.0, zh: 0.0} (added to score)
+  lang_weights: {}        # multiplicative, after bias
+
+# --- run.py: end-to-end orchestrator
+run:
+  cache_dir: data/cache/run
+  retrieve_k: 200
+  use_pubmed: true
+  pubmed_cache: full      # full | ids (ids: re-fetch abstracts via src.pubmed.fetch cache)
+  pubmed_max_docs: 300
+  pubmed_max_chunks: 400  # only if retrieve() cannot take extra docs
+  rerank_max_cands: 300
+  cache_rerank_top: 200
+  json_name: submission.json
+  time_budget_s: null
+  log_every: 100
+
+# --- src/pubmed.py: English branch (NCBI E-utilities + Europe PMC). Env: NCBI_API_KEY, NCBI_EMAIL
+pubmed:
+  cache_db: data/cache/pubmed.sqlite
+  tool: r2ai2026
+  sources: [ncbi, europepmc]
+  retmax: 100              # per query (ESearch capped by esearch_max_depth)
+  esearch_page: 20         # Best Match order is only reliable for small pages
+  esearch_max_depth: 60    # pages of 20 -> <=3 requests per search string
+  preclean: true           # strip stopwords/punctuation/measurements from NL strings before ESearch
+  relax: true              # relax strings with < min_hits hits (drop-one / windows / OR fallback)
+  min_hits: 20
+  max_relax_requests: 8
+  relax_depth: 20
+  epmc_from: [en]          # plan fields sent to Europe PMC
+  epmc_has_abstract: true
+  rrf_k: 60
+  weights: {ncbi: 1.0, europepmc: 0.7, elink: 0.5}
+  max_candidates: 300      # docs returned by candidates_for_plan
+  fetch_batch: 200
+  keep_no_abstract: false
+  elink: true              # pubmed_pubmed related articles from top hits (+1 request/plan)
+  elink_top: 5
+  elink_per_hit: 20
+  ncbi_rps: null           # null -> 2.0 without key / 7.5 with NCBI_API_KEY
+  epmc_rps: 8.0
+  workers: 4               # CLI: plans in parallel
+  inner_workers: 6
+  timeout: 60
+  max_retries: 6
+
+crawl:                            # src/crawl.py (see docs/crawl_report.md)
+  corpus: data/ViBioMIR/links_corpus.parquet
+  out_dir: data/docs              # corpus-XXXXX.parquet (zstd), Doc schema
+  state_db: data/cache/crawl.sqlite
+  backend: curl_cffi              # Chrome TLS fingerprint; httpx gets 403 from longchau/vov/tamanh
+  impersonate: chrome
+  global_concurrency: 64
+  per_domain_concurrency: 4       # per politeness key (registered domain: all *.39.net share it)
+  per_domain_delay: 0.25          # min seconds between request starts per key (+-jitter)
+  jitter: 0.3
+  max_delay: 8.0                  # adaptive slow-down ceiling on 429/503/403
+  politeness_key: registered      # registered | host
+  timeout: 25
+  connect_timeout: 10
+  retries: 3
+  backoff_base: 1.5
+  max_bytes: 4000000
+  flush_every: 5000
+  min_chars: 30
+  extract_workers: 2
+  dead_after: 25
+  max_runs: 3
+  domain_overrides: {}            # e.g. {120ask.com: {concurrency: 12, delay: 0.05}}; also headers:/cookies: per domain
+  split_hosts: [39.net]                 # registered domains whose sub-hosts get their own politeness budget, e.g. [39.net]
+
+# --- src/chunk.py: paragraph/sentence-aware chunking (offsets exact: doc.text[start:end] == text)
+chunk:
+  mode: packed            # packed | sentence | paragraph | list (union, e.g. [packed, sentence])
+  size_unit: chars        # chars | approx_tokens (CJK char = 1, other word = 1.3)
+  target: {vi: 600, zh: 300, en: 800}
+  max: {vi: 1000, zh: 500, en: 1200}
+  min: {vi: 80, zh: 40, en: 100}
+  overlap_sentences: 0
+  respect_paragraphs: true
+  para_break_frac: 0.5    # paragraph boundary ends a chunk once it has >= 0.5*target
+  pubmed_title_chunk: true
+  max_chunks_per_doc: 300 # lower (e.g. 12) to cap index size on the full 4.4M-doc corpus
+  min_chunk_chars: 8
+
+# --- src/index.py: incremental sharded BM25 + dense (see docs/index_design.md)
+index:
+  dir: indexes
+  chunks_dir: data/chunks
+  docs_glob: data/docs/*.parquet
+  workers: 8
+  bm25:
+    k1: 1.2
+    b: 0.75
+    hash_bits: 24         # hashed vocab (crc32), global df/idf over all shards
+    shard_max_chunks: 65000   # <= 65535 -> uint16 rows (3 bytes/posting)
+    zh_hmm: false
+    zh_char_bigrams: false
+    vi_bigrams: true      # syllable + syllable-bigram tokens (fast stand-in for word segmentation)
+    vi_pyvi: false
+  dense:
+    model: BAAI/bge-m3    # local fp16 safetensors copy in data/models/bge-m3 is used if present
+    unit: {vi: doc, zh: doc, en: chunk}   # doc-level (title + lead) -> top docs' chunks scored at query time; vi: chunk only if GPU time allows (~30-45h)
+    doc_lead_chars: 150
+    max_length: 512
+    query_max_length: 256
+    batch_tokens: 16384   # token budget per batch (peak VRAM ~1.5GB fp16)
+    fp16: true
+    cache_path: data/cache/embed.sqlite   # on-the-fly chunk embeddings (PubMed, expanded docs)
+    ivf:
+      min_vectors: 300000 # below: brute force over fp16 memmaps
+      factory: IVF4096,PQ64   # ~72 bytes/vector
+      train_size: 200000
+      nprobe: 64
+      keep_fp16: false    # delete fp16 files once added to IVF (disk!)
+      add_every: 20
+
+# --- src/retrieve.py: BM25 per language + dense + weighted RRF
+retrieve:
+  k_bm25: 200
+  k_dense: 200
+  rrf_k: 60
+  max_rewrites: 4
+  keyword_weight: 1.0
+  dense_doc_top: 30
+  expand_bm25_docs: 10
+  expand_max_chunks_per_doc: 8
+  expand_mode: embed      # embed | inherit
+  langs: [vi, zh, en]
+  extra_max_chunks: 3000
+  weights: {bm25: 1.0, dense: 1.0, dense_doc: 1.0, extra_bm25: 1.0, extra_dense: 1.0}
+
+# --- src/rerank.py: cross-encoder, sigmoid-calibrated scores
+rerank:
+  model: BAAI/bge-reranker-v2-m3
+  max_length: 512
+  batch_tokens: 8192
+  fp16: true
+  top_n: null
+  cache: true
+  cache_path: data/cache/rerank.sqlite
+
+query:                            # src/query.py (see docs/MODELS.md, docs/query_samples.md)
+  model: unsloth/Qwen3-4B-Instruct-2507-bnb-4bit   # pre-quantized 4-bit of Qwen/Qwen3-4B-Instruct-2507
+  quant: 4bit
+  prompt_version: v11             # part of cache key; bump when the prompt changes
+  batch_size: 10
+  max_batch_tokens: 12000         # bs*(prompt+max_new_tokens) cap -> peak VRAM ~4.7GB
+  max_new_tokens: 600
+  retry_max_new_tokens: 1000
+  max_input_tokens: 3072
+  cache: data/cache/query.sqlite
+  fewshot: true                   # off-domain 1-shot example (better style than zero-shot)

@@ -1,0 +1,13 @@
+{
+  "id": "kakaoffical/r2ai-eval-llm-judge",
+  "title": "r2ai-eval-llm-judge",
+  "code_file": "eval_llm_judge.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["kakaoffical/r2ai-eval-pairs"],
+  "competition_sources": [],
+  "kernel_sources": []
+}
