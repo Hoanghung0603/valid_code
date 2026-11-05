@@ -1,0 +1,95 @@
+domain,lang,n_urls,wave,access,start_req_per_s,note
+pubmed.ncbi.nlm.nih.gov,en,240000,1,api,0,"KHÔNG crawl. Europe PMC REST API, 1.000 PMID/request (đặc tả 5.1)"
+suckhoecongdongonline.vn,vi,154502,1,ok,2,"Đã thử 1 trang, requests thường OK"
+120ask.com,zh,98160,1,cloud,2,Chỉ vào được từ IP Nhật/Mỹ/châu Âu. Chạy trên máy cloud NT cấp
+suckhoedoisong.vn,vi,85823,1,ok,2,"Đã thử 1 trang, requests thường OK"
+nhathuoclongchau.com.vn,vi,79598,1,ok,2,"Đã thử 1 trang, requests thường OK"
+thanhnien.vn,vi,72111,1,ok,2,"Đã thử 1 trang, requests thường OK"
+cnkang.com,zh,40046,1,ok,2,"Đã thử 1 trang, requests thường OK"
+ask.39.net,zh,32772,1,ok,2,"Đã thử 1 trang, requests thường OK"
+laodong.vn,vi,31282,1,cookie,2,"Trang đầu trả script đặt cookie D1N=...; đọc giá trị, đặt cookie, gửi lại"
+phunusuckhoe.giadinhonline.vn,vi,27577,1,ok,2,"Đã thử 1 trang, requests thường OK"
+familydoctor.com.cn,zh,26819,1,warp,2,"403 với IP nhà NT; thử IP của TV trước, nếu 403 thì bật WARP hoặc chạy trên máy cloud"
+vinmec.com,vi,26129,1,ok,2,"Đã thử 1 trang, requests thường OK"
+medlatec.vn,vi,24761,1,ok,2,"Đã thử 1 trang, requests thường OK"
+giadinhonline.vn,vi,16729,1,ok,1,"Đã thử 1 trang, requests thường OK"
+baohaiphong.vn,vi,16286,1,ok,1,"Đã thử 1 trang, requests thường OK"
+baonghean.vn,vi,15941,1,ok,1,"Đã thử 1 trang, requests thường OK"
+vietnamnet.vn,vi,15543,1,ok,1,"Đã thử 1 trang, requests thường OK"
+baodanang.vn,vi,14500,1,ok,1,"Đã thử 1 trang, requests thường OK"
+tiemchunglongchau.com.vn,vi,13281,1,ok,1,"Đã thử 1 trang, requests thường OK"
+baocantho.com.vn,vi,12016,1,ok,1,"Đã thử 1 trang, requests thường OK"
+hellobacsi.com,vi,11747,2,ok,1,"Đã thử 1 trang, requests thường OK"
+baoangiang.com.vn,vi,10738,2,ok,1,"Đã thử 1 trang, requests thường OK"
+vov.vn,vi,9784,2,browser,1,403 với request thường; Chrome headless lấy được. Thử trước: header giống trình duyệt đầy đủ
+khoahocphothong.vn,vi,8143,2,untested,1,Chưa thử; kiểm tra trong pilot
+youmed.vn,vi,7189,2,untested,1,Chưa thử; kiểm tra trong pilot
+vov2.vov.vn,vi,6899,2,untested,1,"Cùng hệ thống vov.vn, có thể cũng 403 → kiểm tra trong pilot"
+zysjonline.com,zh,6591,2,done,0,NT đã xong từ dữ liệu chính thức của site. KHÔNG crawl
+phuyen.baodaklak.vn,vi,6252,2,untested,1,Chưa thử; kiểm tra trong pilot
+zhongyibaodian.net,zh,6061,2,ok,1,"Đã thử 1 trang, requests thường OK"
+suckhoeviet.org.vn,vi,5627,2,untested,1,Chưa thử; kiểm tra trong pilot
+baoquangtri.vn,vi,5483,2,untested,1,Chưa thử; kiểm tra trong pilot
+pmc-ecm-healthblog.beta.pharmacity.io,vi,5333,2,untested,1,Chưa thử; kiểm tra trong pilot
+nhandan.vn,vi,5225,2,untested,1,Chưa thử; kiểm tra trong pilot
+baovinhlong.com.vn,vi,5113,2,untested,1,Chưa thử; kiểm tra trong pilot
+a-hospital.com,zh,4701,2,ok,1,"Đã thử 1 trang, requests thường OK"
+tamanhhospital.vn,vi,4261,2,untested,1,Chưa thử; kiểm tra trong pilot
+youlai.cn,zh,4139,2,ok,1,"Đã thử 1 trang, requests thường OK"
+tuoitre.vn,vi,3893,2,untested,1,Chưa thử; kiểm tra trong pilot
+qdnd.vn,vi,3700,2,untested,1,Chưa thử; kiểm tra trong pilot
+vietnamplus.vn,vi,3695,2,untested,1,Chưa thử; kiểm tra trong pilot
+baby.39.net,zh,3368,2,ok,1,"Đã thử 1 trang, requests thường OK"
+baogialai.com.vn,vi,3290,2,untested,1,Chưa thử; kiểm tra trong pilot
+tienphong.vn,vi,3021,2,untested,1,Chưa thử; kiểm tra trong pilot
+test.pmphai.com,zh,2989,2,ok,1,"Đã thử 1 trang, requests thường OK"
+thaythuocvietnam.vn,vi,2927,2,untested,1,Chưa thử; kiểm tra trong pilot
+baoquangninh.vn,vi,2912,2,untested,1,Chưa thử; kiểm tra trong pilot
+bachmai.gov.vn,vi,2783,2,untested,1,Chưa thử; kiểm tra trong pilot
+baochinhphu.vn,vi,2302,2,untested,1,Chưa thử; kiểm tra trong pilot
+dantri.com.vn,vi,2063,2,untested,1,Chưa thử; kiểm tra trong pilot
+vnexpress.net,vi,2055,2,untested,1,Chưa thử; kiểm tra trong pilot
+jbk.39.net,zh,2033,3,ok,1,"Đã thử 1 trang, requests thường OK"
+baolangson.vn,vi,1981,3,untested,1,Chưa thử; kiểm tra trong pilot
+sggp.org.vn,vi,1853,3,untested,1,Chưa thử; kiểm tra trong pilot
+baophutho.vn,vi,1288,3,untested,1,Chưa thử; kiểm tra trong pilot
+hanoimoi.vn,vi,1283,3,untested,1,Chưa thử; kiểm tra trong pilot
+care.39.net,zh,1282,3,ok,1,"Đã thử 1 trang, requests thường OK"
+benhviennhitrunguong.gov.vn,vi,1200,3,untested,1,Chưa thử; kiểm tra trong pilot
+baotayninh.vn,vi,1198,3,untested,1,Chưa thử; kiểm tra trong pilot
+heart.39.net,zh,1055,3,ok,1,"Đã thử 1 trang, requests thường OK"
+fk.39.net,zh,928,3,ok,1,"Đã thử 1 trang, requests thường OK"
+msdmanuals.cn,zh,905,3,ok,1,"Đã thử 1 trang, requests thường OK"
+baothanhhoa.vn,vi,782,3,untested,1,Chưa thử; kiểm tra trong pilot
+nk.39.net,zh,762,3,untested,1,Chưa thử; kiểm tra trong pilot
+cancer.39.net,zh,736,3,untested,1,Chưa thử; kiểm tra trong pilot
+article.iiyi.com,zh,729,3,untested,1,Chưa thử; kiểm tra trong pilot
+tnb.39.net,zh,717,3,untested,1,Chưa thử; kiểm tra trong pilot
+wujue.com,zh,708,3,untested,1,Chưa thử; kiểm tra trong pilot
+woman.39.net,zh,687,3,untested,1,Chưa thử; kiểm tra trong pilot
+food.39.net,zh,594,3,untested,1,Chưa thử; kiểm tra trong pilot
+jb39.com,zh,527,3,untested,1,Chưa thử; kiểm tra trong pilot
+ek.39.net,zh,448,3,untested,1,Chưa thử; kiểm tra trong pilot
+benhvienvietduc.org,vi,425,3,untested,1,Chưa thử; kiểm tra trong pilot
+man.39.net,zh,382,3,untested,1,Chưa thử; kiểm tra trong pilot
+shen.39.net,zh,325,3,untested,1,Chưa thử; kiểm tra trong pilot
+gan.39.net,zh,294,3,untested,1,Chưa thử; kiểm tra trong pilot
+wei.39.net,zh,225,3,untested,1,Chưa thử; kiểm tra trong pilot
+zydcd.com,zh,204,3,untested,1,Chưa thử; kiểm tra trong pilot
+sj.39.net,zh,197,3,untested,1,Chưa thử; kiểm tra trong pilot
+fitness.39.net,zh,185,3,untested,1,Chưa thử; kiểm tra trong pilot
+gk.39.net,zh,90,3,untested,1,Chưa thử; kiểm tra trong pilot
+pf.39.net,zh,85,3,untested,1,Chưa thử; kiểm tra trong pilot
+pharmacity.vn,vi,69,3,untested,1,Chưa thử; kiểm tra trong pilot
+baidianfeng.familydoctor.com.cn,zh,59,3,untested,1,Chưa thử; kiểm tra trong pilot
+gc.39.net,zh,59,3,untested,1,Chưa thử; kiểm tra trong pilot
+health.people.com.cn,zh,50,3,untested,1,Chưa thử; kiểm tra trong pilot
+byby.39.net,zh,37,3,untested,1,Chưa thử; kiểm tra trong pilot
+qihuangzhishu.com,zh,29,3,untested,1,Chưa thử; kiểm tra trong pilot
+baidu.com,zh,11,3,untested,1,Chưa thử; kiểm tra trong pilot
+bingli.iiyi.com,zh,5,3,untested,1,Chưa thử; kiểm tra trong pilot
+mega.vietnamplus.vn,vi,2,3,untested,1,Chưa thử; kiểm tra trong pilot
+qy.familydoctor.com.cn,zh,2,3,untested,1,Chưa thử; kiểm tra trong pilot
+familydoctor.cn,zh,2,3,untested,1,Chưa thử; kiểm tra trong pilot
+ask.familydoctor.com.cn,zh,1,3,untested,1,Chưa thử; kiểm tra trong pilot
+special.vietnamplus.vn,vi,1,3,untested,1,Chưa thử; kiểm tra trong pilot

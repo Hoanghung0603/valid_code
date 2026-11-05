@@ -1,0 +1,9 @@
+pandas>=3.0
+pyarrow>=26.0
+lxml>=6.1
+requests>=2.33
+charset-normalizer>=3.4
+duckdb>=1.5
+zstandard>=0.22
+httpx[http2]>=0.25
+websocket-client>=1.7

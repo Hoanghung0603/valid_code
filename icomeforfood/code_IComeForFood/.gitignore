@@ -1,0 +1,53 @@
+# NT's private strategy notes: never commit
+KE_HOACH.md
+private/
+
+# secrets
+.env
+.env.*
+*.key
+cookies*.txt
+
+# data never goes into the repo (lives in D:\r2ai_data or the private HF dataset)
+*.parquet
+*.zst
+*.duckdb
+*.jsonl
+*.zip
+*.html
+data/
+r2ai_data/
+gold/
+reports/
+
+# python / tooling
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# local storage of files received from the teammate
+kho/
+
+# organizer slides and other documents
+*.pdf
+
+# Local crawler backups and temporary notebook test tools
+*.duckdb.bak*
+*.duckdb.wal
+/statusduck.db
+/statusduck.db.wal
+/statusduck.db.bak*
+/.tmp_notebook_review/
+
+# home crawl output and URL lists (Long Chau)
+crawl_home*/
+longchau_ranked*.csv
+!crawl/longchau_ranked_tv.csv
+
+# Completed VOV raw handoff explicitly shared in the private repo (30/10/2026).
+!/crawl/vov_snapshot_2026-10-30/html/home_shard_*.jsonl.zst
+!/crawl/vov_snapshot_2026-10-30/html_downloads/*.zip

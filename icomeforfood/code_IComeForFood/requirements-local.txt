@@ -1,0 +1,15 @@
+pandas>=2.0
+pyarrow>=14
+duckdb>=1.5
+httpx[http2]>=0.25
+zstandard>=0.22
+charset-normalizer>=3.4
+python-dotenv>=1.0
+tqdm>=4.60
+nest-asyncio>=1.6
+selectolax>=0.3
+trafilatura>=1.8
+resiliparse>=0.14
+playwright>=1.40
+beautifulsoup4>=4.12
+crawl4ai==0.9.5

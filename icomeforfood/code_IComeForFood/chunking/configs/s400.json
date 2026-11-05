@@ -1,0 +1,15 @@
+{
+  "_about": "Section-level chunks: a level-2 section (heading + body, deeper headings included) up to 600 units, split into balanced parts of ~400 above that. Bigger chunks reach the 40% LCS threshold of a reference passage more easily (KE_HOACH 12.3).",
+  "name": "s400",
+  "mode": "section",
+  "target_units": 400,
+  "max_units": 600,
+  "min_units": 60,
+  "overlap_units": 40,
+  "break_level": 2,
+  "heading_max_units": 40,
+  "split_langs": ["vi", "en"],
+  "hard_max_units": 1500,
+  "skip_roles": ["toc", "disclaimer"],
+  "own_roles": ["reference"]
+}

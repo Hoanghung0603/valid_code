@@ -1,0 +1,15 @@
+{
+  "_about": "Paragraph-level chunks: blocks of one section packed to ~150 units (VI syllables / EN words / ZH characters), about 200 model tokens. Fine-grained retrieval unit; neighbours can be merged at submission time.",
+  "name": "p150",
+  "mode": "paragraph",
+  "target_units": 150,
+  "max_units": 300,
+  "min_units": 30,
+  "overlap_units": 25,
+  "break_level": 2,
+  "heading_max_units": 40,
+  "split_langs": ["vi", "en"],
+  "hard_max_units": 1500,
+  "skip_roles": ["toc", "disclaimer"],
+  "own_roles": ["reference"]
+}

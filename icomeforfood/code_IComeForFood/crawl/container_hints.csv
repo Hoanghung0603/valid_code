@@ -1,0 +1,79 @@
+domain,main_container,share,also,title,gold_ids,example_url,covers_all_content
+120ask.com,div.b_askcont,,div.b_anscont_cont,,,https://www.120ask.com/question/31837673.htm,
+a-hospital.com,div#bodyContent,0.87,table#toc.toc (11%); div#toctitle (2%),h1 in h1#firstHeading.firstHeading,3149330,https://www.a-hospital.com/w/%E9%A2%84%E9%98%B2%E5%8C%BB%E5%AD%A6/%E8%84%91%E5%8D%92%E4%B8%AD%E5%92%8C%E5%86%A0%E5%BF%83%E7%97%85%E7%9A%84%E9%A2%84%E9%98%B2%E5%92%8C%E6%8E%A7%E5%88%B6,div#bodyContent (89%)
+ask.39.net,div.sele_all,0.62,div.ask_hid (29%); div.ask_cont (10%),h1 in h1.ask_tit,2376303 2224166,https://ask.39.net/question/93356573.html,div.ask_cont (83%) | div.sele_all (80%)
+baby.39.net,div.art_content,0.93,div.art_summary (7%),h1 in div.art_left,791415,http://baby.39.net/a/201174/1737278.html,div.art_left (100%)
+bachmai.gov.vn,div.content-editor.content-editor-post,0.95,,h3 in div#content-post,,https://bachmai.gov.vn/bai-viet/dot-quy-o-nguoi-tre-nguyen-nhan-va-dau-hieu-nhan-biet?id=33eea3e7-b8a1-80b3-1e18-c921a4856a1c,
+baoangiang.com.vn,div.content-fck-font-size,1.0,,h1 in div.detail-title,5505,https://baoangiang.com.vn/bo-y-te-phan-bo-2-trieu-lieu-vac-xin-moderna-de-nghi-khong-tiem-tron-a307990.html,div.content-fck-font-size (100%)
+baocantho.com.vn,div.content-fck,1.0,,h1 in h1.margintopbot10,19852,https://baocantho.com.vn/kien-truc-xanh-mat-len-ngoi-a60987.html,div.content-fck (100%)
+baochinhphu.vn,div.detail-content,0.96,h2.detail-sapo,h1 in h1.detail-title,,https://baochinhphu.vn/vi-sao-nhieu-ca-benh-sot-xuat-huyet-va-tay-chan-mieng-chuyen-nang-102260113112401731.htm,
+baodanang.vn,div.entry,1.0,,h1 in h1.sc-longform-header-title,33003,https://baodanang.vn/dinh-chi-luu-hanh-va-thu-hoi-4-loai-thuoc-3121875.html,div.entry (100%)
+baogialai.com.vn,div.article__body,0.93,div.article__sapo,h1 in h1.article__title,,https://baogialai.com.vn/dieu-chinh-4660-giuong-benh-ke-hoach-cho-cac-co-so-y-te-post353160.html,
+baohaiphong.vn,div.entry,0.75,div.b-maincontent (25%),h1 in h1.c-detail-head__title,52038,https://baohaiphong.vn/gan-2-600-nguoi-o-kinh-mon-da-hoan-thanh-cach-ly-tap-trung-197943.html,div.b-maincontent (100%)
+baolangson.vn,div#content-detail,0.89,,h1 in h1.name,,https://baolangson.vn/buoc-chuyen-moi-trong-dao-tao-nhan-luc-y-te-5064570.html,
+baonghean.vn,article.entry,1.0,,h1 in h1.sc-longform-header-title,77664,https://baonghean.vn/su-co-don-tang-nguy-co-dau-tim-10099215.html,article.entry (100%)
+baophutho.vn,div#dcontent,,,h1 in h1.pTitle,,https://baophutho.vn/dip-tet-du-ban-cung-dung-quen-uong-nuoc-khi-thuc-day-vi-5-ly-do-nay-247521.htm,
+baoquangninh.vn,div.article__body,0.91,,h1 in h1.article__title,,https://baoquangninh.vn/nhung-chien-si-ao-trang-noi-tuyen-dau-chong-dich-2472657.html,
+baoquangtri.vn,div.td-post-content,0.97,,div in div#article_title,86948,https://baoquangtri.vn/suc-khoe/202007/thi-dua-de-doi-moi-toan-dien-2179323/,
+baotayninh.vn,div#content-detail,,,h1 in h1.name,,https://baotayninh.vn/viet-nam-khong-ghi-nhan-ca-tu-vong-do-covid-19-trong-72-ngay-qua-106740.html,
+baothanhhoa.vn,div.article__body,,h2.article__sapo,h1 in h1.article__title,91630,https://baothanhhoa.vn/trao-tang-the-bhyt-hanh-trinh-chia-se-yeu-thuong-nbsp-lan-toa-gia-tri-nhan-van-272164.htm,
+baovinhlong.com.vn,div.td-post-content,0.91,,div in div#article_title,,https://baovinhlong.com.vn/xa-hoi/y-te/202208/vinh-long-trong-nhom-ty-le-tiem-ngua-covid-19-cho-tre-dan-dau-ca-nuoc-3128604/,
+benhviennhitrunguong.gov.vn,div.entry-content,1.00,,h1 in h1.entry-title__h1,,https://benhviennhitrunguong.gov.vn/5-buoc-xu-tri-khi-tre-bi-chay-mau-cam.html,
+byby.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://byby.39.net/a/20101110/1533940.html,
+cancer.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,https://cancer.39.net/a/110328/1645964.html,
+care.39.net,div.art_content,0.92,div.art_summary (8%),h1 in div.art_left,801921,http://care.39.net/a/171227/5961047.html,div.art_left (100%)
+cnkang.com,div.conmain,0.8,div.article_intro (10%); div#endText (10%),h1 in h1.f22,1989152 1893804,http://www.cnkang.com/nxjk/201508/790380.html,div#endText (100%) | div.conmain (100%)
+dantri.com.vn,article#articleContent,1.00,,h1 in article#articleContent,,https://dantri.com.vn/suc-khoe/hon-300-ca-chan-thuong-do-phao-no-chat-no-trong-dip-tet-20260222141256010.htm,
+ek.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://ek.39.net/a/20101127/1552817.html,
+familydoctor.com.cn,div#viewContent.viewContent,1.0,"[itemprop=""articleBody""]",h1 in div.article-titile,3734205,https://www.familydoctor.com.cn/ganbing/a/201701/1659846.html,div#viewContent.viewContent (100%)
+fitness.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://fitness.39.net/a/20101115/1433512.html,
+fk.39.net,div.art_content,0.92,div.art_summary (8%),h1 in div.art_left,828608,http://fk.39.net/a/140207/4326611.html,div.art_left (100%)
+food.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://food.39.net/a/171011/5751848.html,
+gan.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://gan.39.net/a/151030/4718911.html,
+gc.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://gc.39.net/a/140530/4416999.html,
+giadinhonline.vn,div#explus-editor.content_detail_news,0.97,div.detail-content (3%),h1 in h1.fs-32,104455,https://giadinhonline.vn/binh-thuong-khoe-manh-vi-sao-tu-nhien-do-benh-d182942.html,div.detail-content (100%)
+gk.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://gk.39.net/a/130203/4123002.html,
+hanoimoi.vn,div.entry,0.81,,h1 in h1.sc-longform-header-title,,https://hanoimoi.vn/canh-giac-voi-chung-dau-that-lung-o-nguoi-tre-699663.html,
+heart.39.net,div.art_content,0.91,div.art_summary (9%),h1 in div.art_left,863674,http://heart.39.net/a/220602/10936271.html,div.art_left (100%)
+hellobacsi.com,div.__html__,1.0,,h1 in h1.mb-4,123457,https://hellobacsi.com/mang-thai/thai-ky/cham-soc-me-bau/mang-thai-thang-thu-3-nen-an-gi/,div.__html__ (100%)
+jb39.com,div.jb-body,,div.post-bieming; h2.jb-h2; p.jb-zy,,,https://jb39.com/jibing/AiZiBingRenDeJiXingLanWeiYan256234.htm,
+jbk.39.net,article.w740,0.5,div.ss_det,h1 in div.tit,2525860,https://jbk.39.net/shoushu/zbldzzs/,article.w740 (59%)
+khoahocphothong.vn,article.entry,1.00,,h1 in h1.sc-longform-header-title,134875,https://khoahocphothong.vn/su-dung-khau-trang-y-te-the-nao-de-phong-ngua-virus-corona-236892.html,
+laodong.vn,div#gallery-ctt.art-body,0.94,div.chappeau (6%),h1 in h1.title,149442,https://laodong.vn/dinh-duong-am-thuc/loai-hat-giau-chat-beo-lanh-manh-giup-on-dinh-duong-huyet-1534269.ldo,article.article-detail (94%)
+man.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://man.39.net/a/150320/4594035.html,
+medlatec.vn,div.description,0.98,div.shortdescription (2%),h1 in h1.page-title,181720,https://medlatec.vn/tin-tuc/di-vat-chui-vao-trong-tai-nguy-hiem-khong-xu-tri-di-vat-trong-tai-ra-sao-s98-n27513,div.block-posts-single (100%)
+msdmanuals.cn,section#v965558_zh.TopicGHead_topicGHeadSection__knUIS,0.5,"section#v965583_zh.TopicGHead_topicGHeadSection__knUIS (15%); div.TopicFHead_fHeadBody__wxFX8 (12%); p[class*=""TopicPara_topic_explanation""]",h1 in h1#topicHeaderTitle.readable,3981604,https://www.msdmanuals.cn/professional/dermatologic-disorders/viral-skin-diseases/zoonotic-skin-diseases,section#v965558_zh.TopicGHead_topicGHeadSection__knUIS (50%)
+nhandan.vn,div.article__body,1.00,div.article__sapo,h1 in h1.article__title,,https://nhandan.vn/post-909516.html,
+nhathuoclongchau.com.vn,"div[class~=""max-w-[597px]""]",0.93,div.rounded-xl (4%); div.text-text-secondary (4%),h1 in h1.text-text-primary,210112,https://nhathuoclongchau.com.vn/bai-viet/banh-khuc-gao-lut-bao-nhieu-calo-nhung-ai-nen-an-banh-khuc-gao-nut-69054.html,div.bg-white (93%)
+nk.39.net,div.art_content,,div.art_summary,h1 in div.art_left,872237,http://nk.39.net/a/120707/4005088.html,
+pf.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://pf.39.net/a/240828/x8s6424.html,
+phunusuckhoe.giadinhonline.vn,div#article-body.post-text-content,0.72,div.post-description; div#articleTop; div#articleCenter,h1 in div.post-title,303188,https://phunusuckhoe.giadinhonline.vn/nguoi-phu-nu-it-an-thit-va-o-che-bien-van-mac-ung-thu-giai-oan-cuoi-bac-si-lac-au-khi-biet-co-thich-uong-thu-nay-c12a473758.html,div#article-body.post-text-content (94%)
+phuyen.baodaklak.vn,div.detail-main-content,1.00,,h1 in div.detail-main-title,312490,https://phuyen.baodaklak.vn/95/161948/virus-zika-co-the-song-trong-mat-nguoi-va-gay-benh-ve-mat/,
+qdnd.vn,div.post-content,0.95,p.logo-online,h1 in h1.post-title,,https://www.qdnd.vn/y-te/tin-tuc/benh-nhan-tre-tuoi-dot-quy-tang-manh-trong-dip-tet-814208,
+sggp.org.vn,div.article__body,1.00,div.article__sapo,h1 in h1.article__title,,https://www.sggp.org.vn/da-nang-khieng-vong-dua-ba-benh-nhan-vuot-sat-lo-di-cap-cuu-post824318.html,
+shen.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://shen.39.net/a/110711/1743462.html,
+sj.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://sj.39.net/a/140327/4366299.html,
+suckhoecongdongonline.vn,div.article__body,0.88,div.article__sapo (12%),h1 in h1.article__title,431779,https://suckhoecongdongonline.vn/so-ca-mac-ncov-toan-cau-gan-122-trieu-who-khuyen-cao-tiep-tuc-vac-xin-astrazeneca,div.article (100%)
+suckhoedoisong.vn,div.detail-content,0.9,div.detail-sapo (10%),h1 in h1.detail-title,491886,https://suckhoedoisong.vn/benh-ly-thuong-gap-nhung-hay-bo-sot-16968922.htm,section.detail__contenent-main (100%)
+suckhoeviet.org.vn,div.__MASTERCMS_CONTENT,0.88,div.article-detail-desc,h1 in h1.article-detail-title,566935,https://suckhoeviet.org.vn/tt-green-viet-nam-trao-suc-khoe-nhan-niem-tin-14347.html,
+tamanhhospital.vn,div.post_info.box_detail_post,1.00,,h1 in h1.cl_seoyc,,https://tamanhhospital.vn/tin-tuc/dieu-tri-hieu-qua-tang-ty-le-sinh-con-chinh-chu/,
+test.pmphai.com,div.gu_det_left_con_h1,0.5,div.gu_det_left_con_main (50%),div in div.gu_det_left_top,2539311,https://test.pmphai.com/jeesitede/appcase/toPcDetail?sessionId=&knowledgeLibPrefix=case&id=18568,div#content.gu_det_left_con (100%)
+thanhnien.vn,div.detail-content,0.83,div.detail-sapo (17%),h1 in h1.detail-title,608772,https://thanhnien.vn/co-con-tot-cho-suc-khoe-18560477.htm,div.detail__cmain-main (100%)
+thaythuocvietnam.vn,div.content_single,,,h1 in h1.title_pages,,https://thaythuocvietnam.vn/tri-nam-da-dau-tai-nha-bang-chanh-hieu-qua-nhat/,
+tiemchunglongchau.com.vn,div.kalnia_12cfded9-module__6f21kq__variable,0.71,div.w-fit (16%); div.background-gray-3 (6%),h1 in h1.text-on-light-primary,667924,https://tiemchunglongchau.com.vn/kien-thuc-tiem-chung/khi-hon-nhau-co-lay-benh-dai-khong-nhung-duong-lay-truyen-benh-dai,div.kalnia_12cfded9-module__6f21kq__variable (71%)
+tienphong.vn,div.article__body,0.92,div.article__sapo,h1 in h1.article__title,,https://tienphong.vn/benh-vien-tam-anh-gioi-thieu-cong-nghe-y-te-hien-dai-trong-trien-lam-tai-nha-quoc-hoi-post1778799.tpo,
+tnb.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://tnb.39.net/a/190816/7390975.html,
+tuoitre.vn,div.detail-content.afcbc-body,0.95,p.detail-sapo,h1 in h1.detail-title,,https://tuoitre.vn/thoi-tiet-giao-mua-dich-cum-tang-nhanh-tay-chan-mieng-van-trong-thoi-ky-cao-diem-20251117153014972.htm,
+vietnamnet.vn,div#maincontent.maincontent,0.83,td.item-text (13%); div.content-detail (4%),h1 in h1.content-detail-title,689280,https://vietnamnet.vn/giup-tre-giam-ho-dom-dau-rat-hong-khi-mac-covid-19-820074.html,div#maincontent.maincontent (96%)
+vietnamplus.vn,div.article__body,1.00,div.article__sapo,h1 in h1.article__title,,https://www.vietnamplus.vn/eu-dau-tu-225-trieu-euro-phat-trien-vaccine-cum-the-he-moi-post1094821.vnp,
+vinmec.com,div#main-article.entry,0.96,div.rich-text (4%),h1 in h1.single-title,741633,https://www.vinmec.com/vie/bai-viet/dau-vu-khong-do-chu-ky-kinh-nguyet-vi,div#main-article.entry (96%)
+vnexpress.net,article.fck_detail,0.98,p.description,h1 in h1.title-detail,,https://vnexpress.net/an-uong-the-nao-tot-cho-gan-va-da-day-5048145.html,
+vov.vn,div.text-long,0.93,div.col (7%),h1 in h1.article-title,708925,https://vov.vn/suc-khoe/loi-khuyen-de-cai-thien-suc-khoe-he-tieu-hoa-post926838.vov,div.col (100%)
+vov2.vov.vn,div.article-body,1.00,div.article-description,h1 in h1.title,717300,https://vov2.vov.vn/suc-khoe/sang-2205-bac-giang-va-bac-ninh-tiep-tuc-ghi-nhan-ca-mac-moi-26204.vov2,
+wei.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://wei.39.net/a/2011526/1701316.html,
+woman.39.net,div.art_content,,div.art_summary,h1 in div.art_left,,http://woman.39.net/a/2010610/1326714.html,
+wujue.com,div.art-text,,,div in div.main_articletitle,2033012,http://www.wujue.com/gjwx/gjys/bencao/201012/38289.html,
+youlai.cn,div.textContent--1jgN9,1.0,,div in div.title--OslK-,3985618,https://www.youlai.cn/yyk/article/322580.html,div.textContent--1jgN9 (100%)
+youmed.vn,div.prose.max-w-none.my-4,0.92,details.sources,h1 in h1.font-serif,763056,https://youmed.vn/tin-tuc/dung-bo-qua-nhung-dau-hieu-canh-bao-som-dot-quy/,
+zhongyibaodian.net,div#bodyContent,0.92,table#toc.toc (4%); div.thumbcaption (2%),h1 in h1#firstHeading.firstHeading,4082973,https://zhongyibaodian.net/a/162336.html,div#bodyContent (94%)
+zysjonline.com,div#chapter-content.text-gray-800,1.0,,h1 in h1.text-xl,4266391,https://zysjonline.com/books/jichuhulixue/195141/,div#chapter-content.text-gray-800 (100%)
