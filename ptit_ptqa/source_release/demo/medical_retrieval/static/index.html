@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071b2a">
+  <title>R2AI Evidence Console</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#review-workspace">Đi tới khu vực review</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="R2AI Evidence Console, trang chủ">
+      <span class="brand-mark" aria-hidden="true">R3</span>
+      <span class="brand-copy"><strong>Evidence Console</strong><small>R2AI Stage 3 · multilingual medical retrieval</small></span>
+    </a>
+    <div class="release-health" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span id="release-id">Đang xác minh release</span></div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <div class="hero-kicker"><span>ROAD TO AI 2026</span><span>STAGE 3</span><span>EXP143</span></div>
+        <h1 id="page-title">Bằng chứng y khoa,<br><em>truy vết đến nguồn.</em></h1>
+        <p>Console kiểm định bài nộp: chọn một câu hỏi chính thức, xem thứ tự tài liệu, đọc đoạn bằng chứng và đối chiếu exact substring với snapshot đã khóa.</p>
+        <div class="hero-disclosure"><strong>Verified replay</strong><span>Không chạy inference mới. Không sinh chẩn đoán. Private score chưa công bố.</span></div>
+      </div>
+      <div class="metric-grid" id="metrics" aria-label="Chỉ số release"></div>
+    </section>
+
+    <section class="workspace-shell" id="review-workspace" aria-labelledby="workspace-title">
+      <div class="workspace-heading">
+        <div><span class="section-index">LIVE REVIEW / 01</span><h2 id="workspace-title">Kiểm tra một prediction đã khóa</h2></div>
+        <div class="mode-chip"><span aria-hidden="true"></span> Replay cache · fail-closed</div>
+      </div>
+      <div class="workspace">
+        <aside class="query-panel" aria-labelledby="query-heading">
+          <div class="panel-heading"><span class="panel-number">01</span><div><h3 id="query-heading">Câu hỏi</h3><p>1.200 query chính thức</p></div></div>
+          <label for="query-search">Tìm nội dung hoặc query ID</label>
+          <input id="query-search" type="search" placeholder="Ví dụ: phụ nữ mang thai" autocomplete="off">
+          <div id="query-list" class="query-list" aria-live="polite" aria-label="Danh sách câu hỏi"></div>
+          <div class="selected-query" aria-live="polite"><span id="selected-id">Chưa chọn query</span><p id="selected-text">Chọn một câu hỏi để mở prediction đã khóa.</p></div>
+          <button id="run-button" class="primary" type="button" disabled>Chạy replay</button>
+          <p class="micro">Query không khớp cache sẽ bị từ chối. Hệ thống không dùng silent fallback.</p>
+        </aside>
+
+        <section class="results-panel" aria-labelledby="results-heading">
+          <div class="results-head">
+            <div class="panel-heading"><span class="panel-number">02</span><div><h3 id="results-heading">Kết quả truy hồi</h3><p id="result-summary">Chưa có lượt chạy</p></div></div>
+            <button id="export-button" class="secondary" type="button" disabled>Export JSON</button>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Loại kết quả">
+            <button class="tab active" type="button" role="tab" aria-selected="true" data-kind="chunks">Đoạn trích <b id="chunk-count">—</b></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-kind="docs">Tài liệu <b id="doc-count">—</b></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" data-kind="trace">Truy vết</button>
+          </div>
+          <div id="result-list" class="result-list empty" aria-live="polite"><p>Chọn query và chạy replay để xem output.</p></div>
+          <div id="pagination" class="pagination hidden" aria-label="Phân trang kết quả"><button id="prev" type="button">Trang trước</button><span id="page-label"></span><button id="next" type="button">Trang sau</button></div>
+        </section>
+
+        <aside class="evidence-panel" aria-labelledby="evidence-heading">
+          <div class="panel-heading"><span class="panel-number">03</span><div><h3 id="evidence-heading">Nguồn & provenance</h3><p>Đối chiếu exact substring</p></div></div>
+          <div id="evidence" class="evidence-empty" aria-live="polite">
+            <div class="empty-symbol" aria-hidden="true"><span></span><span></span><span></span></div>
+            <p>Chọn một đoạn trích để resolve về text snapshot.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="graph-section" id="knowledge-graph" aria-labelledby="graph-title">
+      <div class="graph-heading">
+        <div><span class="section-index">EXPERIMENTAL / 02</span><h2 id="graph-title">Knowledge graph: từ câu hỏi đến bằng chứng</h2><p>Với khái niệm đã chuẩn hóa: <strong>query → concept → tài liệu</strong>. Với câu hỏi khác: <strong>query → thuật ngữ / chunk → tài liệu replay</strong>. Mọi loại cạnh đều ghi rõ nguồn.</p></div>
+        <span class="graph-badge">Chưa dùng trong bài nộp</span>
+      </div>
+      <div class="graph-board">
+        <div class="graph-toolbar"><span id="graph-status" role="status" aria-live="polite">Đang kiểm tra graph…</span><span id="graph-counts"></span></div>
+        <div id="graph-visual" class="graph-visual" role="img" aria-label="Đồ thị query đến khái niệm và tài liệu"><p class="graph-empty">Chọn một query ở phía trên để xem các đường nối thuật ngữ.</p></div>
+        <div id="graph-details" class="graph-details" aria-live="polite"></div>
+      </div>
+      <p class="graph-disclosure">Cạnh corpus chứng minh thuật ngữ có xuất hiện trong snapshot; cạnh replay chứng minh đường truy hồi hoặc từ khớp trong chunk đã nộp. Không cạnh nào tự chứng minh tài liệu liên quan về mặt y khoa. ICD chapter chỉ để tham chiếu. Không ảnh hưởng file submission đã khóa.</p>
+    </section>
+
+    <section class="integrity" aria-labelledby="integrity-title">
+      <div class="integrity-copy"><span class="section-index">RELEASE INTEGRITY / 03</span><h2 id="integrity-title">Một fingerprint xuyên suốt CLI, UI và submission</h2><p>Model revisions, index counts và canonical prediction hash đều đọc từ <code>configs/release_exp143.json</code>. Giao diện không có top-k hay prompt riêng. Graph ở trên không thuộc release này.</p></div>
+      <div id="fingerprints" class="fingerprints"></div>
+    </section>
+  </main>
+  <footer><strong>R2AI Stage 3 · Exp143</strong><span>Evidence retrieval demo · không thay thế tư vấn y tế.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="/static/app.js" defer></script>
+  <script src="/static/graph.js" defer></script>
+</body>
+</html>

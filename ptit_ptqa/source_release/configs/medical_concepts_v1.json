@@ -1,0 +1,31 @@
+{
+  "schema_version": "medical_concepts_v1",
+  "scope": "Retrieval aliases only; no clinical causal or treatment claims",
+  "concepts": [
+    {"id":"pregnancy","chapter":"15","aliases":["mang thai","thai kỳ","phụ nữ có thai","phụ nữ mang thai","bà bầu","pregnancy","pregnant","怀孕","妊娠"]},
+    {"id":"diabetes","chapter":"04","aliases":["đái tháo đường","tiểu đường","diabetes mellitus","diabetes","糖尿病"]},
+    {"id":"hypertension","chapter":"09","aliases":["tăng huyết áp","cao huyết áp","hypertension","high blood pressure","高血压"]},
+    {"id":"tuberculosis","chapter":"01","aliases":["bệnh lao","lao phổi","tuberculosis","pulmonary tuberculosis","结核病","肺结核"]},
+    {"id":"asthma","chapter":"10","aliases":["hen phế quản","bệnh hen","asthma","支气管哮喘"]},
+    {"id":"hepatitis_b","chapter":"01","aliases":["viêm gan b","viêm gan siêu vi b","hepatitis b","乙型肝炎","乙肝"]},
+    {"id":"gastritis","chapter":"11","aliases":["viêm dạ dày","gastritis","胃炎"]},
+    {"id":"gastroesophageal_reflux","chapter":"11","aliases":["trào ngược dạ dày thực quản","trào ngược thực quản","gastroesophageal reflux","gerd","胃食管反流"]},
+    {"id":"thyroid_nodule","chapter":"04","aliases":["nhân tuyến giáp","bướu nhân tuyến giáp","thyroid nodule","甲状腺结节"]},
+    {"id":"kidney_failure","chapter":"14","aliases":["suy thận","kidney failure","renal failure","肾衰竭"]},
+    {"id":"stroke","chapter":"09","aliases":["đột quỵ","tai biến mạch máu não","stroke","脑卒中","中风"]},
+    {"id":"depression","chapter":"05","aliases":["trầm cảm","depression","depressive disorder","抑郁症"]},
+    {"id":"breast_cancer","chapter":"02","aliases":["ung thư vú","breast cancer","breast carcinoma","乳腺癌"]},
+    {"id":"cervical_cancer","chapter":"02","aliases":["ung thư cổ tử cung","cervical cancer","宫颈癌"]},
+    {"id":"anemia","chapter":"03","aliases":["thiếu máu","anemia","anaemia","贫血"]},
+    {"id":"allergic_rhinitis","chapter":"10","aliases":["viêm mũi dị ứng","allergic rhinitis","过敏性鼻炎"]},
+    {"id":"pneumonia","chapter":"10","aliases":["viêm phổi","pneumonia","肺炎"]},
+    {"id":"dengue","chapter":"01","aliases":["sốt xuất huyết dengue","sốt dengue","dengue fever","登革热"]},
+    {"id":"hiv","chapter":"01","aliases":["hiv","aids","hiv infection","艾滋病"]},
+    {"id":"infertility","chapter":"14","aliases":["vô sinh","hiếm muộn","infertility","不孕症"]},
+    {"id":"osteoporosis","chapter":"13","aliases":["loãng xương","osteoporosis","骨质疏松"]},
+    {"id":"migraine","chapter":"06","aliases":["đau nửa đầu","migraine","偏头痛"]},
+    {"id":"epilepsy","chapter":"06","aliases":["động kinh","epilepsy","癫痫"]},
+    {"id":"appendicitis","chapter":"11","aliases":["viêm ruột thừa","appendicitis","阑尾炎"]},
+    {"id":"chronic_obstructive_pulmonary_disease","chapter":"10","aliases":["bệnh phổi tắc nghẽn mạn tính","copd","chronic obstructive pulmonary disease","慢性阻塞性肺疾病"]}
+  ]
+}

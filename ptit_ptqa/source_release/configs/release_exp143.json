@@ -1,0 +1,67 @@
+{
+  "schema_version": "r2ai_release_v1",
+  "release_id": "stage3-exp143-20261103",
+  "reference_experiment": "Exp143",
+  "run_mode": "cached_inference_replay",
+  "repo_commit": "0cee33e74e75bb2b849f7814f611b68e173165e1",
+  "public_evaluator": "btc_bilateral_lcs_20261023",
+  "public_metrics": {
+    "final_score": 0.3190,
+    "docs_f2_macro": 0.3731,
+    "docs_precision": 0.2261,
+    "docs_recall": 0.5631,
+    "chunks_f2_macro": 0.2648,
+    "chunks_precision": 0.2047,
+    "chunks_recall": 0.3510
+  },
+  "paths": {
+    "queries": "data/raw/btc_provided/query.parquet",
+    "corpus": "data/raw/btc_provided/links_corpus_vi_en_zh.parquet",
+    "submission": "submission_private01_exp143_replay.zip",
+    "submission_audit": "submission_private01_exp143_replay_audit.json",
+    "index_stats": "data/indices/new_dataset/index/stats.json",
+    "source_text_dir": "data/indices/new_dataset/index/text",
+    "cache": "data/cache/release_exp143/replay.sqlite"
+  },
+  "sha256": {
+    "queries": "ce13508b893bbd6b9169679d540630bc37eb5950cad08b4d5e0e5d7063670c08",
+    "corpus": "87e44a792d7a99fb0fde5dff7f09f1a38a0a1fdf02ddd1ac93a005736e00b0a7",
+    "submission": "14687b27b12a98777daddc290e54e2c25d310743917511866a06cee51e7c4ac3",
+    "predictions": "0cecc857fc2ee9dcdc60cf931d6e66bfb8d677e653396924850746f1bb3e0a9e"
+  },
+  "counts": {
+    "queries": 1200,
+    "predicted_docs": 183703,
+    "predicted_chunks": 127271,
+    "index_docs": 1212421,
+    "index_chunks": 1724798,
+    "dense_dim": 1024
+  },
+  "models": [
+    {
+      "id": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "role": "dense and learned-sparse retrieval"
+    },
+    {
+      "id": "Qwen/Qwen3-Embedding-0.6B",
+      "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "role": "secondary multilingual dense retrieval"
+    },
+    {
+      "id": "Qwen/Qwen3-Reranker-4B",
+      "revision": "22e683669bc0f0bd69640a1354a6d0aebcfeede5",
+      "role": "document and chunk reranking"
+    },
+    {
+      "id": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "role": "source-span reranking for Exp143 additions"
+    }
+  ],
+  "limits": {
+    "query_chars": 12000,
+    "api_page_size": 100,
+    "evidence_context_chars": 4096
+  }
+}
