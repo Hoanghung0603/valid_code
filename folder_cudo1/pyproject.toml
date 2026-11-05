@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "medret"
+version = "1.0.0"
+description = "ViBioMIR (R2AI 2026): Vietnamese medical retrieval, pipeline of the submission S11 (public LB 0.3735)"
+readme = "README.md"
+requires-python = ">=3.11"
+# core: everything the final assembly of S11 needs (README section 4, CPU only)
+dependencies = [
+    "pandas>=2.2",
+    "pyarrow>=15",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pyyaml>=6",
+    "pydantic>=2.5",
+    "typer>=0.12",
+    "duckdb>=1.0",
+    "huggingface_hub>=0.23",
+    "tokenizers>=0.19",
+]
+
+[project.optional-dependencies]
+# parse + indexes (README section 5: rebuild from the crawled HTML)
+index = [
+    "resiliparse>=1.0",
+    "charset-normalizer>=3.0",
+    "faiss-cpu>=1.8",
+    "tantivy>=0.22",
+]
+# query encoding with BGE-M3 (medret run); the Kaggle runners use the Kaggle image's torch / transformers
+ml = [
+    "torch>=2.3",
+    "transformers>=4.51",
+]
+# launchers of the Kaggle embedding / rerank kernels
+kaggle = ["kaggle>=1.6"]
+# polite crawler (crawler/, README section 5.1)
+crawl = ["httpx[http2]>=0.27", "charset-normalizer>=3.0"]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+medret = "medret.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/medret"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["network: needs internet access (downloads the BGE-M3 tokenizer)"]
+addopts = "-m 'not network'"
+
+[tool.ruff]
+line-length = 125
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

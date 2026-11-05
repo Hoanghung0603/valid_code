@@ -1,0 +1,49 @@
+# Default config. Relative paths are resolved against the project root (parent of configs/).
+# Override per experiment by copying this file, or point MEDRET_CONFIG at another YAML.
+
+paths:
+  data_dir: data
+  raw_dir: data/raw            # HF dataset snapshot (links_corpus_vi_en_zh.parquet, query.parquet)
+  crawl_dir: data/crawl        # raw HTML/PDF responses, compressed shards (never delete: re-parse from here)
+  parsed_dir: data/parsed      # extracted document text
+  chunks_dir: data/chunks      # retrieval units
+  index_dir: data/indexes      # BM25 / FAISS indexes
+  dev_dir: data/dev            # synthetic / hand-labelled dev sets (qrels)
+  runs_dir: data/runs          # retrieval outputs per experiment
+  submissions_dir: data/submissions
+
+dataset:
+  hf_repo: AIGuruTinix/ViBioMIR
+  queries_file: query.parquet
+  corpus_file: links_corpus_vi_en_zh.parquet  # v2 (12/10): vi + 240k zh + 240k PubMed; v1 in data/raw/archive
+
+eval:
+  # Mirrors docs/about-competition/evaluation.md; see docs/analysis/competition-analysis.md section 3
+  tokenizer: whitespace  # the 2026-10-10 spec names no tokenizer; 'BAAI/bge-m3' to compare
+  relevance_threshold: 0.4       # LCS >= 40% of the reference chunk's tokens
+  near_duplicate_threshold: null  # earlier spec merged near-duplicate predictions; the current one does not
+  beta: 2.0
+
+embed:
+  # BGE-M3: no query instruction, passage = "title [heading path] text", CLS + L2 norm (medret/index/embed_input.py)
+  model: BAAI/bge-m3
+  max_length: 1024
+
+index:
+  # embedded stores, no server: DuckDB metadata, Tantivy BM25 per language, FAISS IVF-PQ + fp16 memmap
+  dense_run: bge-m3-v1
+  faiss_factory: IVF8192,PQ64
+  nprobe: 64
+  k_coarse: 1000
+  bm25_workers: 6
+  meta_memory_limit: 6GB
+
+llm:
+  # vi -> zh query translation. Qwen3.6-27B is DEV ONLY (27B > 15B): it measures the potential of the step, its
+  # outputs must not reach a submission (medret.retrieve.translate.assert_submittable)
+  translate_model: Qwen3.6-27B
+  threads: 8
+
+submission:
+  # Spec text says integer, the JSON template shows strings. Switch to "str" if the dashboard rejects int.
+  doc_id_type: int

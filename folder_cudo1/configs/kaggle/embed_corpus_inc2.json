@@ -1,0 +1,21 @@
+{
+  "run": "bge-m3-v1-inc2",
+  "kernel": "ducanger/medret-embed-run-inc2",
+  "dataset_sources": [
+    "ducanger/medret-embed-inputs-v1-inc2"
+  ],
+  "accelerator": "NvidiaTeslaT4",
+  "timeout_s": 41400,
+  "out_dir": "data/embeddings/bge-m3-v1-inc2",
+  "inputs_dir": "data/embed_inputs",
+  "runner": {
+    "model": "BAAI/bge-m3",
+    "pool": "cls",
+    "prefix": "",
+    "dtype": "fp16",
+    "max_len": 1024,
+    "budget": 8192,
+    "id_col": "input_id",
+    "est_shard_s": 600
+  }
+}

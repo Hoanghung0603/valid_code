@@ -1,0 +1,10 @@
+{
+  "run": "rerank-qwen3-4b",
+  "kernel": "top1server/medret-rerank-qwen3-4b",
+  "dataset_sources": ["top1server/medret-rerank-pairs", "gloryvu/vibiomir-crawl-snapshot"],
+  "accelerator": "NvidiaTeslaT4",
+  "timeout_s": 43000,
+  "out_dir": "data/kaggle/rerank/qwen3-4b",
+  "runner": {"model": "Qwen/Qwen3-Reranker-4B", "kind": "qwen3", "max_len": 512, "doc_chars": 1600, "budget": 6144,
+             "max_rank": {"vi": 100, "zh": 50}, "est_shard_s": 2400}
+}

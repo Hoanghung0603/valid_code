@@ -1,0 +1,39 @@
+{
+ "run": "rerank-qwen3-4b-long-c",
+ "kernel": "ducanger/medret-rerank-4b-long-c",
+ "dataset_sources": [
+  "ducanger/medret-rerank-pairs-long"
+ ],
+ "accelerator": "NvidiaTeslaT4",
+ "timeout_s": 43000,
+ "out_dir": "data/kaggle/rerank/qwen3-4b-long",
+ "runner": {
+  "model": "Qwen/Qwen3-Reranker-4B",
+  "kind": "qwen3",
+  "max_len": 1024,
+  "doc_chars": 4000,
+  "budget": 6144,
+  "est_shard_s": 1500,
+  "only_shards": [
+   "pairs-0012",
+   "pairs-0013",
+   "pairs-0014",
+   "pairs-0015",
+   "pairs-0016",
+   "pairs-0017",
+   "pairs-0018",
+   "pairs-0019",
+   "pairs-0020",
+   "pairs-0021",
+   "pairs-0022",
+   "pairs-0023",
+   "pairs-0024",
+   "pairs-0025",
+   "pairs-0026",
+   "pairs-0027",
+   "pairs-0028",
+   "pairs-0029"
+  ]
+ },
+ "key": "KAGGLE_API_KEY_0"
+}

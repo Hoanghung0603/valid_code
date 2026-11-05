@@ -1,0 +1,18 @@
+{
+ "run": "rerank-qwen3-4b-twins",
+ "kernel": "thanhdatdo/medret-rerank-4b-twins",
+ "dataset_sources": [
+  "thanhdatdo/medret-rerank-pairs-twins"
+ ],
+ "accelerator": "NvidiaTeslaT4",
+ "timeout_s": 43000,
+ "out_dir": "data/kaggle/rerank/qwen3-4b-twins",
+ "runner": {
+  "model": "Qwen/Qwen3-Reranker-4B",
+  "kind": "qwen3",
+  "max_len": 512,
+  "doc_chars": 1600,
+  "budget": 6144,
+  "est_shard_s": 1300
+ }
+}
